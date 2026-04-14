@@ -35,13 +35,29 @@
         </div>
     </section>
 
+    <!-- 课程导航 -->
+    <nav class="course-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#python-core">Python语言核心</a></li>
+                <li><a href="#data-analysis">数据处理与分析</a></li>
+                <li><a href="#machine-learning">机器学习与AI</a></li>
+                <li><a href="#web-development">Web开发与后端</a></li>
+                <li><a href="#software-engineering">软件工程实践</a></li>
+                <li><a href="#specialized-fields">专项应用领域</a></li>
+                <li><a href="#theoretical-foundation">核心理论基础</a></li>
+                <li><a href="#learning-path">学习路径建议</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- 课程模块 -->
     <section class="course-modules">
         <div class="container">
             <h2>课程内容</h2>
             
             <!-- 一、Python 语言核心 -->
-            <div class="section-card">
+            <div id="python-core" class="section-card">
                 <h3 class="section-title">🐍 一、Python 语言核心</h3>
                 <p class="section-description">这是掌握Python的根基，包括语法、特性与内在机制。</p>
                 
@@ -148,7 +164,7 @@
             </div>
 
             <!-- 二、数据处理与分析 -->
-            <div class="section-card">
+            <div id="data-analysis" class="section-card">
                 <h3 class="section-title">📊 二、数据处理与分析</h3>
                 <p class="section-description">Python在数据领域的核心应用栈，覆盖从获取、处理到分析的全流程。</p>
                 
@@ -216,7 +232,7 @@
             </div>
 
             <!-- 三、机器学习与人工智能 -->
-            <div class="section-card">
+            <div id="machine-learning" class="section-card">
                 <h3 class="section-title">🤖 三、机器学习与人工智能</h3>
                 <p class="section-description">从传统机器学习到深度学习的完整技术栈。</p>
                 
@@ -301,7 +317,7 @@
             </div>
 
             <!-- 四、Web开发与后端 -->
-            <div class="section-card">
+            <div id="web-development" class="section-card">
                 <h3 class="section-title">🌐 四、Web开发与后端</h3>
                 <p class="section-description">构建网络服务与应用的框架与技术。</p>
                 
@@ -374,7 +390,7 @@
             </div>
 
             <!-- 五、软件开发与工程实践 -->
-            <div class="section-card">
+            <div id="software-engineering" class="section-card">
                 <h3 class="section-title">🛠️ 五、软件开发与工程实践</h3>
                 <p class="section-description">编写高质量、可维护代码的工程化能力。</p>
                 
@@ -459,7 +475,7 @@
             </div>
 
             <!-- 六、专项应用领域 -->
-            <div class="section-card">
+            <div id="specialized-fields" class="section-card">
                 <h3 class="section-title">🔗 六、专项应用领域</h3>
                 <p class="section-description">Python在其他特定领域的强大工具箱。</p>
                 
@@ -545,7 +561,7 @@
             </div>
 
             <!-- 七、核心理论基础 -->
-            <div class="section-card">
+            <div id="theoretical-foundation" class="section-card">
                 <h3 class="section-title">📚 七、核心理论基础</h3>
                 <p class="section-description">支撑上述应用能力的底层知识。</p>
                 
@@ -600,7 +616,7 @@
             </div>
 
             <!-- 学习路径建议 -->
-            <div class="section-card">
+            <div id="learning-path" class="section-card">
                 <h3 class="section-title">🧭 学习路径建议</h3>
                 <div class="learning-path">
                     <ol>
@@ -956,6 +972,41 @@
             border-bottom: 2px solid white;
         }
         
+        /* 课程导航样式 */
+        .course-nav {
+            background-color: #3498db;
+            position: sticky;
+            top: 70px;
+            z-index: 900;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px 0;
+        }
+        
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .nav-links li a:active {
+            transform: translateY(0);
+        }
+        
         /* 响应式设计 */
         @media (max-width: 768px) {
             .course-hero h1 {
@@ -985,6 +1036,21 @@
             
             .resources-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            /* 课程导航响应式 */
+            .course-nav {
+                top: 120px;
+            }
+            
+            .nav-links {
+                gap: 10px;
+                padding: 10px 0;
+            }
+            
+            .nav-links li a {
+                padding: 6px 12px;
+                font-size: 0.85rem;
             }
         }
         
