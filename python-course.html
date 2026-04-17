@@ -47,14 +47,14 @@
     <nav class="course-nav">
         <div class="container">
             <ul class="nav-links">
-                <li><a href="#python-core">Python语言核心</a></li>
-                <li><a href="#data-analysis">数据处理与分析</a></li>
-                <li><a href="#machine-learning">机器学习与AI</a></li>
-                <li><a href="#web-development">Web开发与后端</a></li>
-                <li><a href="#software-engineering">软件工程实践</a></li>
-                <li><a href="#specialized-fields">专项应用领域</a></li>
-                <li><a href="#theoretical-foundation">核心理论基础</a></li>
-                <li><a href="#learning-path">学习路径建议</a></li>
+                <li><a href="#module1">模块一：核心语法与流程控制</a></li>
+                <li><a href="#module2">模块二：核心数据结构</a></li>
+                <li><a href="#module3">模块三：函数与模块化思维</a></li>
+                <li><a href="#module4">模块四：数据处理"三剑客"</a></li>
+                <li><a href="#module5">模块五：文件操作与异常处理</a></li>
+                <li><a href="#appendix">附录：学习资源与编程规范</a></li>
+                <li><a href="#roadmap">课程学习路线图</a></li>
+                <li><a href="#features">课程特色</a></li>
             </ul>
         </div>
     </nav>
@@ -65,7 +65,7 @@
             <h2>课程内容</h2>
             
             <!-- 模块一：核心语法与流程控制 -->
-            <div id="python-core" class="section-card">
+            <div id="module1" class="section-card">
                 <h3 class="section-title">📝 模块一：核心语法与流程控制 — 建立计算思维</h3>
                 <p class="section-description">学习目标：这是与AI沟通的底层逻辑，无需死记符号，但必须理解其运行机制。</p>
                 
@@ -113,7 +113,7 @@
             </div>
 
             <!-- 模块二：核心数据结构 -->
-            <div id="data-analysis" class="section-card">
+            <div id="module2" class="section-card">
                 <h3 class="section-title">📦 模块二：核心数据结构 — 数据的容器</h3>
                 <p class="section-description">学习目标：数据分析与AI处理的起点都是数据容器，这部分必须熟练掌握其特性（增删改查）。</p>
                 
@@ -172,7 +172,7 @@
             </div>
 
             <!-- 模块三：函数与模块化思维 -->
-            <div id="machine-learning" class="section-card">
+            <div id="module3" class="section-card">
                 <h3 class="section-title">🧩 模块三：函数与模块化思维 — 指挥AI的"指令单元"</h3>
                 <p class="section-description">学习目标：AI生成代码往往是以函数为单位的，你需要懂如何定义和调用。</p>
                 
@@ -245,7 +245,7 @@
             </div>
 
             <!-- 模块四：数据处理"三剑客" -->
-            <div id="web-development" class="section-card">
+            <div id="module4" class="section-card">
                 <h3 class="section-title">🔍 模块四：数据处理"三剑客" — 直接对接业务与AI ⭐⭐⭐</h3>
                 <p class="section-description">学习目标：这是传统编程向数据/AI领域跨越的关键，也是你专业的核心。不要用纯Python去造轮子，直接学习这三大库。</p>
                 
@@ -270,11 +270,22 @@
                     <h4>4.2 Pandas — 数据分析核心 ⭐⭐⭐ 重中之重</h4>
                     <ul class="module-content">
                         <li>DataFrame结构：理解表格数据的核心对象</li>
-                        <li>数据读取：CSV文件、Excel文件</li>
-                        <li>数据清洗：处理缺失值、处理重复值、数据类型转换</li>
-                        <li>数据筛选：条件筛选、loc[] 与 iloc[] 的使用</li>
-                        <li>分组聚合：groupby() 分组操作、聚合函数</li>
-                        <li>数据合并：merge() 连接操作、concat() 拼接操作</li>
+                        <li>数据读取：</li>
+                        <li>CSV文件：pd.read_csv()</li>
+                        <li>Excel文件：pd.read_excel()</li>
+                        <li>数据清洗：</li>
+                        <li>处理缺失值：dropna(), fillna()</li>
+                        <li>处理重复值：duplicated(), drop_duplicates()</li>
+                        <li>数据类型转换：astype()</li>
+                        <li>数据筛选：</li>
+                        <li>条件筛选：布尔索引</li>
+                        <li>loc[] 与 iloc[] 的使用</li>
+                        <li>分组聚合：</li>
+                        <li>groupby() 分组操作</li>
+                        <li>聚合函数：agg(), sum(), mean(), count()</li>
+                        <li>数据合并：</li>
+                        <li>merge() 连接操作</li>
+                        <li>concat() 拼接操作</li>
                     </ul>
                 </div>
                 
@@ -285,7 +296,12 @@
                     <h4>4.3 Matplotlib — 数据可视化</h4>
                     <ul class="module-content">
                         <li>基础绑定：plt.plot(), plt.show()</li>
-                        <li>核心图表：折线图、柱状图、散点图、饼图、直方图</li>
+                        <li>核心图表：</li>
+                        <li>折线图：plt.plot()</li>
+                        <li>柱状图：plt.bar()</li>
+                        <li>散点图：plt.scatter()</li>
+                        <li>饼图：plt.pie()</li>
+                        <li>直方图：plt.hist()</li>
                         <li>图表美化：标题、标签、图例、样式</li>
                         <li>中文显示问题解决</li>
                     </ul>
@@ -297,7 +313,7 @@
             </div>
 
             <!-- 模块五：文件操作与异常处理 -->
-            <div id="software-engineering" class="section-card">
+            <div id="module5" class="section-card">
                 <h3 class="section-title">💾 模块五：文件操作与异常处理 — 让程序健壮落地</h3>
                 <p class="section-description">学习目标：真实业务需要与外部数据交互，且运行中难免出错。</p>
                 
@@ -323,7 +339,10 @@
                     <ul class="module-content">
                         <li>基本结构：try-except 语句</li>
                         <li>完整结构：try-except-else-finally</li>
-                        <li>常见异常类型：ValueError, TypeError, FileNotFoundError, KeyError, IndexError</li>
+                        <li>常见异常类型：</li>
+                        <li>ValueError, TypeError</li>
+                        <li>FileNotFoundError</li>
+                        <li>KeyError, IndexError</li>
                         <li>自定义异常：创建与应用</li>
                     </ul>
                     <div class="module-resources">
@@ -334,7 +353,7 @@
             </div>
 
             <!-- 附录：学习资源与编程规范 -->
-            <div id="specialized-fields" class="section-card">
+            <div id="appendix" class="section-card">
                 <h3 class="section-title">📚 附录：学习资源与编程规范</h3>
                 
                 <div class="module-card">
@@ -357,7 +376,10 @@
                     <h4>B. 编程规范（PEP 8）</h4>
                     <ul class="module-content">
                         <li>代码缩进：4个空格</li>
-                        <li>命名规范：变量/函数（snake_case）、类名（PascalCase）、常量（UPPER_CASE）</li>
+                        <li>命名规范：</li>
+                        <li>变量/函数：snake_case</li>
+                        <li>类名：PascalCase</li>
+                        <li>常量：UPPER_CASE</li>
                         <li>注释与文档字符串</li>
                         <li>代码可读性原则</li>
                     </ul>
@@ -369,17 +391,18 @@
                     </div>
                     <h4>C. 常用第三方库速查</h4>
                     <ul class="module-content">
-                        <li>NumPy：科学计算（pip install numpy）</li>
-                        <li>Pandas：数据分析（pip install pandas）</li>
-                        <li>Matplotlib：数据可视化（pip install matplotlib）</li>
-                        <li>Requests：HTTP请求（pip install requests）</li>
-                        <li>OpenPyXL：Excel处理（pip install openpyxl）</li>
+                        <li>库名 &nbsp;&nbsp;&nbsp;&nbsp; 用途 &nbsp;&nbsp;&nbsp;&nbsp; 安装命令</li>
+                        <li>NumPy &nbsp;&nbsp;&nbsp;&nbsp; 科学计算 &nbsp;&nbsp;&nbsp;&nbsp; pip install numpy</li>
+                        <li>Pandas &nbsp;&nbsp;&nbsp;&nbsp; 数据分析 &nbsp;&nbsp;&nbsp;&nbsp; pip install pandas</li>
+                        <li>Matplotlib &nbsp;&nbsp;&nbsp;&nbsp; 数据可视化 &nbsp;&nbsp;&nbsp;&nbsp; pip install matplotlib</li>
+                        <li>Requests &nbsp;&nbsp;&nbsp;&nbsp; HTTP请求 &nbsp;&nbsp;&nbsp;&nbsp; pip install requests</li>
+                        <li>OpenPyXL &nbsp;&nbsp;&nbsp;&nbsp; Excel处理 &nbsp;&nbsp;&nbsp;&nbsp; pip install openpyxl</li>
                     </ul>
                 </div>
             </div>
 
             <!-- 课程学习路线图 -->
-            <div id="theoretical-foundation" class="section-card">
+            <div id="roadmap" class="section-card">
                 <h3 class="section-title">🗺️ 课程学习路线图</h3>
                 <div class="learning-path">
                     <div class="path-steps">
@@ -417,7 +440,7 @@
             </div>
 
             <!-- 课程特色 -->
-            <div id="learning-path" class="section-card">
+            <div id="features" class="section-card">
                 <h3 class="section-title">✨ 课程特色</h3>
                 <div class="course-features">
                     <div class="feature-item">
@@ -437,68 +460,6 @@
                         <span class="feature-text">与数据分析专业紧密结合</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 学习资源 -->
-    <section class="learning-resources">
-        <div class="container">
-            <h2>学习资源</h2>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <h3>推荐教材</h3>
-                    <ul>
-                        <li>《Python编程：从入门到实践》</li>
-                        <li>《Python基础教程》</li>
-                        <li>《流畅的Python》</li>
-                        <li>《Python核心编程》</li>
-                        <li>《算法图解》</li>
-                    </ul>
-                </div>
-                <div class="resource-card">
-                    <h3>在线资源</h3>
-                    <ul>
-                        <li>Python官方文档</li>
-                        <li>菜鸟教程 - Python</li>
-                        <li>Codecademy Python课程</li>
-                        <li>W3Schools Python教程</li>
-                        <li>Real Python</li>
-                    </ul>
-                </div>
-                <div class="resource-card">
-                    <h3>练习平台</h3>
-                    <ul>
-                        <li>LeetCode</li>
-                        <li>CodeWars</li>
-                        <li>HackerRank</li>
-                        <li>Python练习题网站</li>
-                        <li>编程竞赛平台</li>
-                    </ul>
-                </div>
-                <div class="resource-card">
-                    <h3>开发工具</h3>
-                    <ul>
-                        <li>PyCharm</li>
-                        <li>Visual Studio Code</li>
-                        <li>Jupyter Notebook</li>
-                        <li>Anaconda</li>
-                        <li>Git版本控制</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 课程操作 -->
-    <section class="course-cta">
-        <div class="container">
-            <h2>开始学习</h2>
-            <p>通过系统学习Python基础课程，培养扎实的编程素养，为未来的数据分析和其他领域的应用打下基础。</p>
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-primary">开始学习</a>
-                <a href="#" class="btn btn-secondary">下载资料</a>
-                <a href="index.html" class="btn btn-outline">返回首页</a>
             </div>
         </div>
     </section>
@@ -837,15 +798,6 @@
             
             .module-card {
                 padding: 25px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .resources-grid {
-                grid-template-columns: 1fr;
             }
             
             /* 课程导航响应式 */
