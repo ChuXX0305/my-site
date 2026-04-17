@@ -1108,6 +1108,7 @@ print(greet("World"))</textarea>
                 <div id="code-output" class="code-output"></div>
             </div>
         </div>
+        <div class="resize-handle"></div>
     </div>
 
     <script>
@@ -1200,6 +1201,41 @@ print(greet("World"))</textarea>
             isDragging = false;
             container.style.cursor = 'grab';
         });
+
+        // 缩放功能
+        const resizeHandle = document.querySelector('.resize-handle');
+        let isResizing = false;
+
+        resizeHandle.addEventListener('mousedown', function(e) {
+            isResizing = true;
+            e.preventDefault();
+            document.body.style.cursor = 'se-resize';
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (isResizing) {
+                const containerRect = container.getBoundingClientRect();
+                const newWidth = e.clientX - containerRect.left;
+                const newHeight = e.clientY - containerRect.top;
+                
+                // 设置最小尺寸
+                if (newWidth > 400 && newHeight > 300) {
+                    container.style.width = newWidth + 'px';
+                    container.style.height = newHeight + 'px';
+                    
+                    // 调整CodeMirror高度
+                    if (editor) {
+                        const editorHeight = newHeight - 150; // 减去其他元素的高度
+                        editor.setSize('100%', Math.max(150, editorHeight) + 'px');
+                    }
+                }
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isResizing = false;
+            document.body.style.cursor = '';
+        });
     </script>
 
     <style>
@@ -1210,11 +1246,14 @@ print(greet("World"))</textarea>
             right: 20px;
             width: 600px;
             max-width: 90vw;
+            height: 500px;
+            max-height: 80vh;
             background-color: #2c3e50;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             cursor: grab;
+            overflow: hidden;
         }
 
         .code-editor-header {
@@ -1338,6 +1377,24 @@ print(greet("World"))</textarea>
         .code-output .loading {
             color: #f39c12;
             font-style: italic;
+        }
+
+        /* 缩放手柄样式 */
+        .resize-handle {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 15px;
+            height: 15px;
+            background-color: #3498db;
+            cursor: se-resize;
+            border-radius: 0 0 8px 0;
+            border-top: 1px solid #2980b9;
+            border-left: 1px solid #2980b9;
+        }
+
+        .resize-handle:hover {
+            background-color: #2980b9;
         }
 
         /* 响应式设计 */
