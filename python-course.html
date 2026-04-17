@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python基础课程 - 谢恩楚</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Python基础课程 - 谢恩楚</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- 引入Pyodide -->
+        <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+        <!-- 引入CodeMirror -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+    </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
@@ -1065,6 +1073,283 @@
             
             .module-card {
                 padding: 20px;
+            }
+        }
+    </style>
+
+    <!-- 代码编辑器组件 -->
+    <div id="code-editor-container" class="code-editor-container">
+        <div class="code-editor-header">
+            <h3>Python代码运行器</h3>
+            <button id="toggle-editor" class="toggle-btn">−</button>
+        </div>
+        <div id="editor-content" class="editor-content">
+            <div class="code-editor">
+                <textarea id="code-input"># 在这里输入Python代码
+print("Hello, Python!")
+
+# 尝试一些基本操作
+x = 10
+y = 20
+print(f"x + y = {x + y}")
+
+# 定义一个函数
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))</textarea>
+                <div class="editor-controls">
+                    <button id="run-code" class="run-btn">运行代码</button>
+                    <button id="clear-output" class="clear-btn">清空输出</button>
+                </div>
+            </div>
+            <div class="output-container">
+                <h4>输出结果：</h4>
+                <div id="code-output" class="code-output"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 初始化Pyodide
+        let pyodide;
+        async function initPyodide() {
+            pyodide = await loadPyodide();
+            console.log("Pyodide加载成功");
+        }
+        initPyodide();
+
+        // 初始化CodeMirror
+        const codeInput = document.getElementById('code-input');
+        const editor = CodeMirror.fromTextArea(codeInput, {
+            mode: 'python',
+            theme: 'monokai',
+            lineNumbers: true,
+            matchBrackets: true,
+            indentUnit: 4,
+            autofocus: false
+        });
+
+        // 运行代码
+        document.getElementById('run-code').addEventListener('click', async function() {
+            const code = editor.getValue();
+            const output = document.getElementById('code-output');
+            output.innerHTML = '<div class="loading">运行中...</div>';
+            
+            try {
+                // 重定向标准输出
+                const oldStdout = pyodide.globals.get('sys').stdout;
+                let outputText = '';
+                
+                pyodide.globals.set('sys.stdout', {
+                    write: (text) => {
+                        outputText += text;
+                    },
+                    flush: () => {}
+                });
+                
+                await pyodide.runPythonAsync(code);
+                
+                // 恢复标准输出
+                pyodide.globals.get('sys').stdout = oldStdout;
+                
+                output.innerHTML = '<pre>' + outputText + '</pre>';
+            } catch (error) {
+                output.innerHTML = '<pre class="error">' + error + '</pre>';
+            }
+        });
+
+        // 清空输出
+        document.getElementById('clear-output').addEventListener('click', function() {
+            document.getElementById('code-output').innerHTML = '';
+        });
+
+        // 折叠/展开编辑器
+        document.getElementById('toggle-editor').addEventListener('click', function() {
+            const content = document.getElementById('editor-content');
+            const btn = this;
+            if (content.style.display === 'none') {
+                content.style.display = 'flex';
+                btn.textContent = '−';
+            } else {
+                content.style.display = 'none';
+                btn.textContent = '+';
+            }
+        });
+
+        // 拖动功能
+        const container = document.getElementById('code-editor-container');
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        container.querySelector('.code-editor-header').addEventListener('mousedown', function(e) {
+            isDragging = true;
+            offsetX = e.clientX - container.getBoundingClientRect().left;
+            offsetY = e.clientY - container.getBoundingClientRect().top;
+            container.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (isDragging) {
+                container.style.left = (e.clientX - offsetX) + 'px';
+                container.style.top = (e.clientY - offsetY) + 'px';
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+            container.style.cursor = 'grab';
+        });
+    </script>
+
+    <style>
+        /* 代码编辑器样式 */
+        .code-editor-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 600px;
+            max-width: 90vw;
+            background-color: #2c3e50;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            cursor: grab;
+        }
+
+        .code-editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background-color: #34495e;
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .code-editor-header h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .editor-content {
+            display: flex;
+            flex-direction: column;
+            background-color: #1e1e1e;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .code-editor {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .CodeMirror {
+            height: 300px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        .editor-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #333;
+        }
+
+        .run-btn, .clear-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .run-btn {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .run-btn:hover {
+            background-color: #229954;
+            transform: translateY(-1px);
+        }
+
+        .clear-btn {
+            background-color: #95a5a6;
+            color: white;
+        }
+
+        .clear-btn:hover {
+            background-color: #7f8c8d;
+            transform: translateY(-1px);
+        }
+
+        .output-container {
+            background-color: #2c3e50;
+            padding: 15px;
+            border-top: 1px solid #333;
+        }
+
+        .output-container h4 {
+            margin: 0 0 10px 0;
+            color: #ecf0f1;
+            font-size: 0.9rem;
+        }
+
+        .code-output {
+            background-color: #1e1e1e;
+            padding: 10px;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            color: #ecf0f1;
+        }
+
+        .code-output pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        .code-output .error {
+            color: #e74c3c;
+        }
+
+        .code-output .loading {
+            color: #f39c12;
+            font-style: italic;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .code-editor-container {
+                width: 90vw;
+                right: 5vw;
+                left: 5vw;
+            }
+
+            .CodeMirror {
+                height: 200px;
             }
         }
     </style>
