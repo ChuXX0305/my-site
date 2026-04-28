@@ -79,6 +79,18 @@
                         <li>数据类型转换：int(), float(), str(), bool()</li>
                         <li>类型检测：type() 函数的使用</li>
                     </ul>
+                    <div class="practice-area">
+                        <h5>💻 练习：变量与类型</h5>
+                        <p class="practice-hint">创建一个变量存储你的名字，然后输出"Hello, [你的名字]!"</p>
+                        <textarea id="practice1" class="practice-code"># 在这里编写代码
+name = "你的名字"
+print(f"Hello, {name}!")</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(1)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(1)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output1" class="practice-output"></div>
+                    </div>
                 </div>
                 
                 <div class="module-card">
@@ -92,6 +104,18 @@
                         <li>逻辑运算符：and, or, not</li>
                         <li>赋值运算符：=, +=, -=, *=, /=</li>
                     </ul>
+                    <div class="practice-area">
+                        <h5>💻 练习：运算符</h5>
+                        <p class="practice-hint">计算 10 + 20 * 3 的结果并打印</p>
+                        <textarea id="practice2" class="practice-code"># 在这里编写代码
+result = 10 + 20 * 3
+print(result)</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(2)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(2)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output2" class="practice-output"></div>
+                    </div>
                 </div>
                 
                 <div class="module-card">
@@ -108,6 +132,21 @@
                     <div class="module-resources">
                         <p class="resources-title">实战要点：</p>
                         <p>在AI时代，你需要清楚告诉AI"在什么条件下循环做什么事"，这部分逻辑必须清晰</p>
+                    </div>
+                    <div class="practice-area">
+                        <h5>💻 练习：条件语句</h5>
+                        <p class="practice-hint">判断年龄是否成年（>=18），输出相应提示</p>
+                        <textarea id="practice3" class="practice-code"># 在这里编写代码
+age = 20
+if age >= 18:
+    print("成年人")
+else:
+    print("未成年人")</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(3)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(3)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output3" class="practice-output"></div>
                     </div>
                 </div>
             </div>
@@ -128,6 +167,20 @@
                         <li>列表推导式：简洁高效的数据处理方式</li>
                         <li>常用方法：sort(), reverse(), len(), in 操作</li>
                     </ul>
+                    <div class="practice-area">
+                        <h5>💻 练习：列表操作</h5>
+                        <p class="practice-hint">创建一个列表，添加元素，然后排序</p>
+                        <textarea id="practice4" class="practice-code"># 在这里编写代码
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
+fruits.sort()
+print(fruits)</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(4)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(4)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output4" class="practice-output"></div>
+                    </div>
                 </div>
                 
                 <div class="module-card">
@@ -144,6 +197,20 @@
                         <p class="resources-title">实战要点：</p>
                         <p>字典是后续处理JSON数据、调用API返回结果的核心格式，必须熟练掌握</p>
                     </div>
+                    <div class="practice-area">
+                        <h5>💻 练习：字典操作</h5>
+                        <p class="practice-hint">创建一个学生字典，添加年龄字段，然后输出所有键值对</p>
+                        <textarea id="practice5" class="practice-code"># 在这里编写代码
+student = {"name": "张三", "grade": "大三"}
+student["age"] = 20
+for key, value in student.items():
+    print(f"{key}: {value}")</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(5)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(5)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output5" class="practice-output"></div>
+                    </div>
                 </div>
                 
                 <div class="module-card">
@@ -156,6 +223,19 @@
                         <li>不可变性及其应用场景</li>
                         <li>元组解包</li>
                     </ul>
+                    <div class="practice-area">
+                        <h5>💻 练习：元组解包</h5>
+                        <p class="practice-hint">创建一个元组并进行解包</p>
+                        <textarea id="practice6" class="practice-code"># 在这里编写代码
+person = ("李四", 22, "男")
+name, age, gender = person
+print(f"姓名: {name}, 年龄: {age}, 性别: {gender}")</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(6)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(6)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output6" class="practice-output"></div>
+                    </div>
                 </div>
                 
                 <div class="module-card">
@@ -168,6 +248,22 @@
                         <li>去重、交集、并集、差集运算</li>
                         <li>集合推导式</li>
                     </ul>
+                    <div class="practice-area">
+                        <h5>💻 练习：集合操作</h5>
+                        <p class="practice-hint">创建两个集合，求交集和并集</p>
+                        <textarea id="practice7" class="practice-code"># 在这里编写代码
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+union_set = set1 | set2
+intersection_set = set1 & set2
+print("并集:", union_set)
+print("交集:", intersection_set)</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(7)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(7)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output7" class="practice-output"></div>
+                    </div>
                 </div>
             </div>
 
@@ -186,6 +282,21 @@
                         <li>函数命名规范</li>
                         <li>函数调用与执行流程</li>
                     </ul>
+                    <div class="practice-area">
+                        <h5>💻 练习：函数定义</h5>
+                        <p class="practice-hint">定义一个计算两数之和的函数</p>
+                        <textarea id="practice8" class="practice-code"># 在这里编写代码
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(f"5 + 3 = {result}")</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(8)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(8)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output8" class="practice-output"></div>
+                    </div>
                 </div>
                 
                 <div class="module-card">
@@ -199,6 +310,21 @@
                         <li>默认参数：预设默认值</li>
                         <li>可变参数：*args 和 **kwargs</li>
                     </ul>
+                    <div class="practice-area">
+                        <h5>💻 练习：参数类型</h5>
+                        <p class="practice-hint">定义一个带默认参数的问候函数</p>
+                        <textarea id="practice9" class="practice-code"># 在这里编写代码
+def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+print(greet("World"))
+print(greet("Python", "Hi"))</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(9)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(9)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output9" class="practice-output"></div>
+                    </div>
                 </div>
                 
                 <div class="module-card">
@@ -213,6 +339,21 @@
                     <div class="module-resources">
                         <p class="resources-title">实战要点：</p>
                         <p>理解函数如何输出结果，以便在后续流程中承接数据</p>
+                    </div>
+                    <div class="practice-area">
+                        <h5>💻 练习：多返回值</h5>
+                        <p class="practice-hint">定义一个函数同时返回两个数的和与积</p>
+                        <textarea id="practice10" class="practice-code"># 在这里编写代码
+def calculate(a, b):
+    return a + b, a * b
+
+sum_result, product_result = calculate(4, 5)
+print(f"和: {sum_result}, 积: {product_result}")</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(10)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(10)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output10" class="practice-output"></div>
                     </div>
                 </div>
                 
@@ -241,6 +382,19 @@
                         <li>匿名函数的定义与使用</li>
                         <li>与 map(), filter(), sorted() 配合使用</li>
                     </ul>
+                    <div class="practice-area">
+                        <h5>💻 练习：Lambda函数</h5>
+                        <p class="practice-hint">使用lambda函数对列表进行平方运算</p>
+                        <textarea id="practice11" class="practice-code"># 在这里编写代码
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x ** 2, numbers))
+print(squared)</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(11)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(11)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output11" class="practice-output"></div>
+                    </div>
                 </div>
             </div>
 
@@ -261,6 +415,24 @@
                         <li>常用函数：sum(), mean(), std(), max(), min()</li>
                         <li>广播机制简介</li>
                     </ul>
+                    <div class="practice-area">
+                        <h5>💻 练习：NumPy数组操作</h5>
+                        <p class="practice-hint">创建NumPy数组并进行基本运算</p>
+                        <textarea id="practice12" class="practice-code"># 在这里编写代码
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5])
+print("数组:", arr)
+print("数组类型:", arr.dtype)
+print("数组形状:", arr.shape)
+print("数组求和:", arr.sum())
+print("数组均值:", arr.mean())</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(12)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(12)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output12" class="practice-output"></div>
+                    </div>
                 </div>
                 
                 <div class="module-card">
@@ -287,6 +459,27 @@
                         <li>merge() 连接操作</li>
                         <li>concat() 拼接操作</li>
                     </ul>
+                    <div class="practice-area">
+                        <h5>💻 练习：Pandas DataFrame</h5>
+                        <p class="practice-hint">创建DataFrame并进行基本操作</p>
+                        <textarea id="practice13" class="practice-code"># 在这里编写代码
+import pandas as pd
+
+data = {
+    '姓名': ['张三', '李四', '王五'],
+    '年龄': [20, 21, 19],
+    '成绩': [85, 92, 78]
+}
+df = pd.DataFrame(data)
+print(df)
+print("\n平均年龄:", df['年龄'].mean())
+print("最高成绩:", df['成绩'].max())</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(13)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(13)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output13" class="practice-output"></div>
+                    </div>
                 </div>
                 
                 <div class="module-card">
@@ -329,6 +522,24 @@
                         <li>CSV文件处理：结合Pandas进行读写</li>
                         <li>文件路径操作：os 模块与 pathlib 模块</li>
                     </ul>
+                    <div class="practice-area">
+                        <h5>💻 练习：文件操作</h5>
+                        <p class="practice-hint">使用with语句写入并读取文件</p>
+                        <textarea id="practice14" class="practice-code"># 在这里编写代码
+# 写入文件
+with open("test.txt", "w") as f:
+    f.write("Hello, Python!")
+
+# 读取文件
+with open("test.txt", "r") as f:
+    content = f.read()
+    print(content)</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(14)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(14)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output14" class="practice-output"></div>
+                    </div>
                 </div>
                 
                 <div class="module-card">
@@ -348,6 +559,24 @@
                     <div class="module-resources">
                         <p class="resources-title">实战要点：</p>
                         <p>让程序在遇到错误时不至于直接崩溃，而是优雅地处理或记录</p>
+                    </div>
+                    <div class="practice-area">
+                        <h5>💻 练习：异常处理</h5>
+                        <p class="practice-hint">使用try-except处理除零错误</p>
+                        <textarea id="practice15" class="practice-code"># 在这里编写代码
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("错误：不能除以零！")
+else:
+    print(f"结果: {result}")
+finally:
+    print("程序执行完毕")</textarea>
+                        <div class="practice-controls">
+                            <button onclick="runPractice(15)" class="run-practice-btn">运行代码</button>
+                            <button onclick="checkPractice(15)" class="check-practice-btn">检查答案</button>
+                        </div>
+                        <div id="output15" class="practice-output"></div>
                     </div>
                 </div>
             </div>
@@ -831,42 +1060,7 @@
         }
     </style>
 
-    <!-- 代码编辑器组件 -->
-    <div id="code-editor-container" class="code-editor-container">
-        <div class="code-editor-header">
-            <h3>Python代码运行器</h3>
-            <button id="toggle-editor" class="toggle-btn">−</button>
-        </div>
-        <div id="editor-content" class="editor-content">
-            <div class="code-editor">
-                <textarea id="code-input"># 在这里输入Python代码
-print("Hello, Python!")
-
-# 尝试一些基本操作
-x = 10
-y = 20
-print(f"x + y = {x + y}")
-
-# 定义一个函数
-def greet(name):
-    return f"Hello, {name}!"
-
-print(greet("World"))</textarea>
-                <div class="editor-controls">
-                    <button id="run-code" class="run-btn">运行代码</button>
-                    <button id="clear-output" class="clear-btn">清空输出</button>
-                </div>
-            </div>
-            <div class="output-container">
-                <h4>输出结果：</h4>
-                <div id="code-output" class="code-output"></div>
-            </div>
-        </div>
-        <div class="resize-handle"></div>
-    </div>
-
     <script>
-        // 初始化Pyodide
         let pyodide;
         async function initPyodide() {
             pyodide = await loadPyodide();
@@ -874,25 +1068,12 @@ print(greet("World"))</textarea>
         }
         initPyodide();
 
-        // 初始化CodeMirror
-        const codeInput = document.getElementById('code-input');
-        const editor = CodeMirror.fromTextArea(codeInput, {
-            mode: 'python',
-            theme: 'monokai',
-            lineNumbers: true,
-            matchBrackets: true,
-            indentUnit: 4,
-            autofocus: false
-        });
-
-        // 运行代码
-        document.getElementById('run-code').addEventListener('click', async function() {
-            const code = editor.getValue();
-            const output = document.getElementById('code-output');
+        async function runPractice(id) {
+            const code = document.getElementById(`practice${id}`).value;
+            const output = document.getElementById(`output${id}`);
             output.innerHTML = '<div class="loading">运行中...</div>';
             
             try {
-                // 重定向标准输出
                 const oldStdout = pyodide.globals.get('sys').stdout;
                 let outputText = '';
                 
@@ -905,232 +1086,174 @@ print(greet("World"))</textarea>
                 
                 await pyodide.runPythonAsync(code);
                 
-                // 恢复标准输出
                 pyodide.globals.get('sys').stdout = oldStdout;
                 
-                output.innerHTML = '<pre>' + outputText + '</pre>';
+                output.innerHTML = '<pre class="success">' + outputText + '</pre>';
             } catch (error) {
                 output.innerHTML = '<pre class="error">' + error + '</pre>';
             }
-        });
+        }
 
-        // 清空输出
-        document.getElementById('clear-output').addEventListener('click', function() {
-            document.getElementById('code-output').innerHTML = '';
-        });
-
-        // 折叠/展开编辑器
-        document.getElementById('toggle-editor').addEventListener('click', function() {
-            const content = document.getElementById('editor-content');
-            const btn = this;
-            if (content.style.display === 'none') {
-                content.style.display = 'flex';
-                btn.textContent = '−';
-            } else {
-                content.style.display = 'none';
-                btn.textContent = '+';
-            }
-        });
-
-        // 拖动功能
-        const container = document.getElementById('code-editor-container');
-        let isDragging = false;
-        let offsetX, offsetY;
-
-        container.querySelector('.code-editor-header').addEventListener('mousedown', function(e) {
-            isDragging = true;
-            offsetX = e.clientX - container.getBoundingClientRect().left;
-            offsetY = e.clientY - container.getBoundingClientRect().top;
-            container.style.cursor = 'grabbing';
-        });
-
-        document.addEventListener('mousemove', function(e) {
-            if (isDragging) {
-                container.style.left = (e.clientX - offsetX) + 'px';
-                container.style.top = (e.clientY - offsetY) + 'px';
-            }
-        });
-
-        document.addEventListener('mouseup', function() {
-            isDragging = false;
-            container.style.cursor = 'grab';
-        });
-
-        // 缩放功能
-        const resizeHandle = document.querySelector('.resize-handle');
-        let isResizing = false;
-
-        resizeHandle.addEventListener('mousedown', function(e) {
-            isResizing = true;
-            e.preventDefault();
-            document.body.style.cursor = 'se-resize';
-        });
-
-        document.addEventListener('mousemove', function(e) {
-            if (isResizing) {
-                const containerRect = container.getBoundingClientRect();
-                const newWidth = e.clientX - containerRect.left;
-                const newHeight = e.clientY - containerRect.top;
-                
-                // 设置最小尺寸
-                if (newWidth > 400 && newHeight > 300) {
-                    container.style.width = newWidth + 'px';
-                    container.style.height = newHeight + 'px';
-                    
-                    // 调整CodeMirror高度
-                    if (editor) {
-                        const editorHeight = newHeight - 150; // 减去其他元素的高度
-                        editor.setSize('100%', Math.max(150, editorHeight) + 'px');
-                    }
+        function checkPractice(id) {
+            const code = document.getElementById(`practice${id}`).value;
+            const output = document.getElementById(`output${id}`);
+            
+            const expectedResults = {
+                1: /Hello.*你的名字/,
+                2: /70/,
+                3: /成年人/,
+                4: /apple.*banana.*cherry.*orange/,
+                5: /name.*张三.*grade.*大三.*age.*20/,
+                6: /姓名.*李四.*年龄.*22.*性别.*男/,
+                7: /并集.*1.*2.*3.*4.*5.*6.*7.*8.*交集.*4.*5/,
+                8: /5 \+ 3 = 8/,
+                9: /Hello.*World.*Hi.*Python/,
+                10: /和.*9.*积.*20/,
+                11: /\[1.*4.*9.*16.*25\]/,
+                12: /数组.*\[1.*2.*3.*4.*5\].*数组求和.*15.*数组均值.*3\.0/,
+                13: /张三.*李四.*王五.*平均年龄.*20\.0.*最高成绩.*92/,
+                14: /Hello.*Python/,
+                15: /错误.*不能除以零.*程序执行完毕/
+            };
+            
+            runPractice(id);
+            
+            setTimeout(() => {
+                const resultText = output.textContent;
+                if (expectedResults[id] && expectedResults[id].test(resultText)) {
+                    output.innerHTML += '<div class="check-result correct">✅ 答案正确！</div>';
+                } else {
+                    output.innerHTML += '<div class="check-result wrong">❌ 答案不正确，请检查代码</div>';
                 }
-            }
-        });
-
-        document.addEventListener('mouseup', function() {
-            isResizing = false;
-            document.body.style.cursor = '';
-        });
+            }, 1000);
+        }
     </script>
 
     <style>
-        /* 代码编辑器样式 */
-        .code-editor-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 600px;
-            max-width: 90vw;
-            height: 500px;
-            max-height: 80vh;
-            background-color: #2c3e50;
+        /* 练习区域样式 */
+        .practice-area {
+            background-color: #f5f5f5;
             border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-            cursor: grab;
-            overflow: hidden;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid #3498db;
         }
 
-        .code-editor-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 15px;
-            background-color: #34495e;
-            color: white;
-            border-radius: 8px 8px 0 0;
+        .practice-area h5 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+            font-size: 1.1rem;
         }
 
-        .code-editor-header h3 {
-            margin: 0;
-            font-size: 1rem;
-            font-weight: bold;
-        }
-
-        .toggle-btn {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .editor-content {
-            display: flex;
-            flex-direction: column;
-            background-color: #1e1e1e;
-            border-radius: 0 0 8px 8px;
-        }
-
-        .code-editor {
-            flex: 1;
+        .practice-hint {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            background-color: #e8f4f8;
             padding: 10px;
+            border-radius: 4px;
         }
 
-        .CodeMirror {
-            height: 300px;
+        .practice-code {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
             font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
             font-size: 14px;
-            border-radius: 4px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            resize: vertical;
+            line-height: 1.5;
         }
 
-        .editor-controls {
+        .practice-code:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .practice-controls {
             display: flex;
             gap: 10px;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid #333;
+            margin-top: 15px;
         }
 
-        .run-btn, .clear-btn {
-            padding: 8px 16px;
+        .run-practice-btn, .check-practice-btn {
+            padding: 10px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 14px;
             transition: all 0.3s;
         }
 
-        .run-btn {
+        .run-practice-btn {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .run-practice-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+
+        .check-practice-btn {
             background-color: #27ae60;
             color: white;
         }
 
-        .run-btn:hover {
+        .check-practice-btn:hover {
             background-color: #229954;
             transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
         }
 
-        .clear-btn {
-            background-color: #95a5a6;
-            color: white;
-        }
-
-        .clear-btn:hover {
-            background-color: #7f8c8d;
-            transform: translateY(-1px);
-        }
-
-        .output-container {
-            background-color: #2c3e50;
+        .practice-output {
+            margin-top: 15px;
             padding: 15px;
-            border-top: 1px solid #333;
-        }
-
-        .output-container h4 {
-            margin: 0 0 10px 0;
-            color: #ecf0f1;
-            font-size: 0.9rem;
-        }
-
-        .code-output {
             background-color: #1e1e1e;
-            padding: 10px;
-            border-radius: 4px;
-            max-height: 200px;
-            overflow-y: auto;
+            border-radius: 6px;
+            min-height: 60px;
             font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
             font-size: 14px;
-            color: #ecf0f1;
-        }
-
-        .code-output pre {
-            margin: 0;
+            color: #d4d4d4;
             white-space: pre-wrap;
+            word-wrap: break-word;
         }
 
-        .code-output .error {
+        .practice-output .success {
+            color: #4ecdc4;
+        }
+
+        .practice-output .error {
             color: #e74c3c;
         }
 
-        .code-output .loading {
+        .practice-output .loading {
             color: #f39c12;
             font-style: italic;
+        }
+
+        .check-result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .check-result.correct {
+            background-color: rgba(39, 174, 96, 0.2);
+            color: #27ae60;
+        }
+
+        .check-result.wrong {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
         }
 
         /* 学习路线图样式 */
@@ -1212,34 +1335,18 @@ print(greet("World"))</textarea>
             color: #2c3e50;
         }
 
-        /* 缩放手柄样式 */
-        .resize-handle {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 15px;
-            height: 15px;
-            background-color: #3498db;
-            cursor: se-resize;
-            border-radius: 0 0 8px 0;
-            border-top: 1px solid #2980b9;
-            border-left: 1px solid #2980b9;
-        }
-
-        .resize-handle:hover {
-            background-color: #2980b9;
-        }
-
         /* 响应式设计 */
         @media (max-width: 768px) {
-            .code-editor-container {
-                width: 90vw;
-                right: 5vw;
-                left: 5vw;
+            .practice-controls {
+                flex-direction: column;
             }
 
-            .CodeMirror {
-                height: 200px;
+            .run-practice-btn, .check-practice-btn {
+                width: 100%;
+            }
+
+            .practice-code {
+                min-height: 150px;
             }
         }
     </style>
